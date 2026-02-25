@@ -297,12 +297,16 @@ body {
   }
 
   #resume {
-    @apply w-fit h-fit absolute top-16 left-7/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply absolute top-16 left-7/12 w-[780px] h-[85vh] max-h-[900px] min-w-[420px] min-h-[320px] bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     #window-header {
       h2 {
         @apply font-bold text-sm text-center flex-1;
       }
+    }
+
+    .resume-content {
+      @apply h-[calc(100%-52px)] overflow-auto p-4 bg-gray-100 flex justify-center;
     }
   }
 

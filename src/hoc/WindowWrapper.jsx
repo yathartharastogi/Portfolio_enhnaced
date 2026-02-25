@@ -80,7 +80,20 @@ const WindowWrapper = (Component, windowKey) => {
           zIndex: windowState.zIndex,
           ...(!isMaximized && windowState?.size ? windowState.size : {}),
           ...(isMaximized
-            ? { top: 0, left: 0, width: "100vw", height: "100dvh", borderRadius: 0, transform: "none" }
+            ? {
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: "100vw",
+                height: "100dvh",
+                maxWidth: "100vw",
+                maxHeight: "100dvh",
+                minWidth: 0,
+                minHeight: 0,
+                borderRadius: 0,
+                transform: "none",
+              }
             : {}),
         }}
         className="absolute"
