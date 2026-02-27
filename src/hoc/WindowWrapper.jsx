@@ -14,6 +14,13 @@ const WindowWrapper = (Component, windowKey) => {
     const resizeStartRef = useRef(null);
     const isMinimized = !!windowState?.isMinimized;
     const isMaximized = !!windowState?.isMaximized;
+    const topZIndex = Math.max(
+      ...Object.values(windows ?? {})
+        .filter((win) => win?.isOpen && !win?.isMinimized)
+        .map((win) => win?.zIndex ?? 0),
+      0,
+    );
+    const isActiveWindow = !!windowState?.isOpen && !isMinimized && windowState?.zIndex === topZIndex;
 
     useEffect(() => {
       const handleMouseMove = (event) => {
@@ -76,6 +83,7 @@ const WindowWrapper = (Component, windowKey) => {
       <section
         id={windowKey}
         ref={ref}
+        data-window-active={isActiveWindow ? "true" : "false"}
         style={{
           zIndex: windowState.zIndex,
           ...(!isMaximized && windowState?.size ? windowState.size : {}),

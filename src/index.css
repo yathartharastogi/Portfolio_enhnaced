@@ -118,6 +118,10 @@ body {
     @apply flex items-center justify-between px-4 py-3 rounded-t-lg bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
   }
 
+  [data-window-active="true"] #window-header {
+    @apply text-gray-700 bg-gray-100;
+  }
+
   #safari {
     @apply w-4xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
@@ -354,7 +358,7 @@ body {
     }
   }
 
-  #txtfile {
+  [id^="txtfile"] {
     @apply w-md absolute top-36 right-32 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     h2 {
@@ -362,7 +366,7 @@ body {
     }
   }
 
-  #imgfile {
+  [id^="imgfile"] {
     @apply w-xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     #window-header {

@@ -1,5 +1,5 @@
 import {Welcome, Navbar, Dock} from "#components";
-import {Safari, Terminal, Resume, Finder} from "#windows";
+import {Safari, Terminal, Resume, Finder, Text, Image, Contact} from "#windows";
 
 const App = () => {
   return (
@@ -12,6 +12,9 @@ const App = () => {
         <Safari/>
         <Resume/>
         <Finder/>
+        <Text/>
+        <Image/>
+        <Contact />
     </main>
   )
 }
